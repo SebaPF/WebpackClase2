@@ -1,0 +1,10 @@
+// LOS ARCHIVOS CON '.' SON ARCHIVOS OCULTOS EN SO UNIX'S //
+
+{
+    "presets": [
+        "@babel/preset-env" // JS MODERNO //
+    ],
+    "plugins": [
+        "@babel/plugin-transform-runtime" // ASINCRONISMO //
+    ]
+}
