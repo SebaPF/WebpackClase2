@@ -15,7 +15,7 @@ module.exports = {
         assetModuleFilename: 'assets/images/[hash][ext][query]'
     }, // 'resolve()' PERMITE SABER DONDE ESTA EL DIRECTORIO/CARPETA //
     mode: 'development', // ACTIVO Y LE DIGO QUE ES PARA DESARROLLO ... //
-    watch: true, // ACTIVAR EL MODO "WATCH", SE QUEDA ESCUCHANDO A LOS CAMBIOS //
+    //watch: true, // ACTIVAR EL MODO "WATCH", SE QUEDA ESCUCHANDO A LOS CAMBIOS, SI USO UN DEV-SERVER ENTONCES NO VA, YA QUE TRAE UNO POR DEFECTO ... //
     resolve: {
         extensions: ['.js'], // EXTENSIONES DE ARCHIVOS PARA QUE LOS LEA //
         alias: {
@@ -81,6 +81,13 @@ module.exports = {
         }),
         new Dotenv(),
     ],
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress : true,
+        historyApiFallback: true,
+        port: 3006,
+    },
+
 /* PORQUE LA PERFORMANCE SE USARA FULL EN PRODUCCION ... //
     optimization: {
         minimize: true,
